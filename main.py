@@ -108,9 +108,7 @@ def find_movie():
     )
     db.session.add(new_movie)
     db.session.commit()
-    get_movie = Movie.query.filter_by(title=title).first()
-    print(type(get_movie.id))
-    return redirect(url_for("edit_movie", id=get_movie.id))
+    return redirect(url_for("edit_movie", id=new_movie.id))
 
 
 if __name__ == '__main__':
